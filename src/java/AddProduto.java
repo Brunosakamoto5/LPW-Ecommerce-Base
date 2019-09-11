@@ -14,7 +14,7 @@ import modelos.Produto;
 
 /**
  *
- * @author gutol
+ * @author gutol & brunosakamoto5
  */
 public class AddProduto extends HttpServlet {
 
@@ -22,22 +22,22 @@ public class AddProduto extends HttpServlet {
     public void doPost( HttpServletRequest request,
                         HttpServletResponse response
             )throws ServletException, IOException{
-        
+
         String descricao = request.getParameter("descricao");
-        
+
         float preco = Float.parseFloat(
                 request.getParameter("preco")
         );
-        
+
         Produto p = new Produto();
         p.setDescricao(descricao);
         p.setPreco(preco);
-        
+
         Produto.getLista().add(p);
-        
-        response.sendRedirect("index.jsp");
-        
+
+        response.sendRedirect("produtos.jsp");
+
     }
-    
-    
+
+
 }

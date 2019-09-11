@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author gutol
+ * @author gutol & brunosakamoto5
  */
 public class Login extends HttpServlet {
 
@@ -31,18 +31,18 @@ public class Login extends HttpServlet {
         //obtendo os parâmetros da requisição
         String email = request.getParameter("email");
         String senha = request.getParameter("senha");
-        
+
         //comparar com os dado de login default
-        if(email.equals("adm@ifpr.edu.br") && 
+        if(email.equals("adm@ifpr.edu.br") &&
                 senha.equals("admin")){
             //salvando sucesso do login na sessão
             request.getSession().setAttribute("logado", true);
-            
+
             //redirecionar para página de produtos
             response.sendRedirect("produtos.jsp");
         }else{
             //redirecionar para a tela de login
             response.sendRedirect("login.jsp");
         }
-    }   
+    }
 }
