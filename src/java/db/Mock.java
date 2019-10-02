@@ -7,6 +7,7 @@ package db;
 
 import java.util.ArrayList;
 import modelos.Produto;
+import modelos.Usuario;
 
 /**
  *
@@ -14,10 +15,45 @@ import modelos.Produto;
  */
 public class Mock {
 
-   private static ArrayList<Produto> lista;
 
-   public static void makeMock(){
-      if(lista == null){
+
+  public static void makeMock(){
+     createUsers();
+     createProducts();
+
+  }
+
+   private static void createUsers(){
+      ArrayList<Usuario> lista;
+
+      if(Usuario.getLista().isEmpty()){
+         lista = Usuario.getLista();
+
+         Usuario admin = new Usuario();
+         admin.setEmail("admin@ifpr.edu.br");
+         admin.setSenha("admin");
+         admin.setNome ("Administrador");
+         lista.add(admin);
+
+         Usuario gerente = new Usuario();
+         gerente.setEmail("gerente@ifpr.edu.br");
+         gerente.setSenha("gerente");
+         gerente.setNome ("Gerente Da Lojinha");
+         lista.add(gerente);
+
+
+
+      }
+
+
+   }
+
+
+   private static void createProducts(){
+      ArrayList<Produto> lista;
+
+      //so cria produtos com lista vazia
+      if(Produto.getLista().isEmpty()){
          lista = Produto.getLista();
 
          Produto caneta = new Produto(); //1
@@ -51,7 +87,7 @@ public class Mock {
                  lista.add(lapis);
 
          Produto borracha = new Produto(); //6
-                 borracha.setDescricao("Lapis");
+                 borracha.setDescricao("Borracha");
                  borracha.setPreco(1.5f);
                  borracha.setOferta(false);
                  lista.add(borracha);
@@ -67,6 +103,12 @@ public class Mock {
                  Fone_Renzer.setPreco(500.0f);
                  Fone_Renzer.setOferta(true);
                  lista.add(Fone_Renzer);
+
+         Produto Pen_Drive = new Produto(); //9
+                 Pen_Drive.setDescricao("OSU Power Play");
+                 Pen_Drive.setPreco(5.0f);
+                 Pen_Drive.setOferta(false);
+                 lista.add(Pen_Drive);
 
 
       }
