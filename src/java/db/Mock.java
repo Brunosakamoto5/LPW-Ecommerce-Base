@@ -60,42 +60,50 @@ public class Mock {
                  caneta.setDescricao("Caneta Bic");
                  caneta.setPreco(1.5f);
                  caneta.setOferta(true);
+                 caneta.setImagem("https://www.noffice.com.br/wp-content/uploads/2019/08/caneta-esferografica-bic-07-azul-600x600.jpg");
                  lista.add(caneta);
+
 
          Produto computador = new Produto(); //2
                  computador.setDescricao("Computador não da NASA");
                  computador.setPreco(3500.0f);
                  computador.setOferta(true);
+                 computador.setImagem("");
                  lista.add(computador);
 
          Produto caderno = new Produto(); //3
                  caderno.setDescricao("Caderno");
                  caderno.setPreco(5.5f);
                  caderno.setOferta(true);
+                 caderno.setImagem("");
                  lista.add(caderno);
 
          Produto caneca = new Produto(); //4
                  caneca.setDescricao("Caneca");
                  caneca.setPreco(10.f);
                  caneca.setOferta(false);
+                 caneca.setImagem("");
                  lista.add(caneca);
 
          Produto lapis = new Produto(); //5
                  lapis.setDescricao("Lapis");
                  lapis.setPreco(1.0f);
                  lapis.setOferta(false);
+                 lapis.setImagem("");
                  lista.add(lapis);
 
          Produto borracha = new Produto(); //6
                  borracha.setDescricao("Borracha");
                  borracha.setPreco(1.5f);
                  borracha.setOferta(false);
+                 borracha.setImagem("");
                  lista.add(borracha);
 
          Produto Cartolina = new Produto(); //7
                  Cartolina.setDescricao("Cartolina");
                  Cartolina.setPreco(2.0f);
                  Cartolina.setOferta(false);
+                 Cartolina.setImagem("");
                  lista.add(Cartolina);
 
          Produto Fone_Renzer = new Produto(); //8
