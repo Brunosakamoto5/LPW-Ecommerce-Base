@@ -4,9 +4,10 @@
     Author     : gutol & brunosakamoto5
 --%>
 
-<%@page import="modelos.Produto"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
 <!DOCTYPE html>
+
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -18,35 +19,29 @@
 
       <jsp:include page="menu.jsp">
          <jsp:param name="item" value="ofertas" />
-
       </jsp:include>
 
+      <jsp:useBean id="Produtos" class="modelos.Produto"/>
 
       <div class="container">
          <h1>Ofertas Da Loja!</h1>
 
 
          <div class="ofertas">
-         <%
-            for (int i = 0; i < Produto.getLista().size(); i++) {
-               Produto p = Produto.getLista().get(i);
+            <c:forEach var="p" items="${Produtos.lista}">
+               <c:if test="${p.oferta}">
+               <div>
+                  <h5> ${p.descricao}</h5>
+                  <p> R$ ${p.preco}</p>
+                  <img src="${p.imagem}"> </img>
+               </div>
+            </c:if>
 
-               if(p.isOferta()){
-                  %>
-                     <div>
-                        <h5> <%= p.getDescricao()%> </h5>
-                        <p> <%= p.getPreco()%> </p>
-                        <img src="<%=p.getImagem()%> </img>
-                     </div>
-                  <%
+            </c:forEach>
 
-
-            }
-
-          }
-
-         %>
          </div>
+
+
       </div>
       <script src="js/bootstrap.min.js"></script>
    </body>
